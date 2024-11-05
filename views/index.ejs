@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Homepage</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <%- include('navbar') %>
+    <section class="section">
+      <ul>
+        <% users.forEach((user) => { %> <%- include('users/user', {user: user});
+        %> <% }); %>
+      </ul>
+    </section>
+  </body>
+</html>
