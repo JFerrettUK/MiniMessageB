@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Homepage</title>
+    <title>Mini Message Board</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
@@ -9,9 +10,15 @@
   <body>
     <%- include('navbar') %>
     <section class="section">
+      <h1>Welcome to the Mini Message Board!</h1>
+
       <ul>
-        <% users.forEach((user) => { %> <%- include('users/user', {user: user});
-        %> <% }); %>
+        <% messages.forEach(message => { %>
+        <div>
+          <%= message.text %> - <%= message.user %>
+          <a href="/message/<%= message.id %>">Open</a>
+        </div>
+        <% }); %>
       </ul>
     </section>
   </body>
